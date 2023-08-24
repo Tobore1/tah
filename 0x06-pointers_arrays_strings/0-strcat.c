@@ -6,24 +6,36 @@
  *
  * Return: void
  */
-char *_strcat(char *dest, char *src)
-{
-	int i;
-	int j;
+#include <stdio.h>
 
-	i = 0;
-	while (dest[i] != '\0')
-	{
-		i++;
-	}
-	j = 0;
-	while (src[j] != '\0')
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
+char *_strcat(char *dest, const char *src) {
+    char *ptr = dest;
+    
+    // Find the end of the destination string
+    while (*ptr != '\0') {
+        ptr++;
+    }
+    
+    // Append characters from src to dest
+    while (*src != '\0') {
+        *ptr = *src;
+        ptr++;
+        src++;
+    }
+    
+    // Add the terminating null byte
+    *ptr = '\0';
+    
+    return dest;
+}
 
-	dest[i] = '\0';
-	return (dest);
+int main() {
+    char dest[50] = "Hello, ";
+    char src[] = "World!";
+    
+    _strcat(dest, src);
+    
+    printf("Concatenated string: %s\n", dest);
+    
+    return 0;
 }
