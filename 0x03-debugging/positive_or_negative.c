@@ -8,23 +8,15 @@ void positive_or_negative(int i)
 {
     if (i < 0)
     {
-        printf("%d is negative\n", i);
+        printf("%d is %s\n", i, "negative" );
     }
     else if (i > 0)
     {
-        printf("%d is positive\n", i);
+        printf("%d is %s\n", i,"positive" );
     }
     else
     {
-        printf("%d is zero\n", i);
+        printf("%d is %s\n", i,"zero" );
     }
-}
-
-int main()
-{
-    int num;
-    printf("Enter a number: ");
-    scanf("%d", &num);
-    positive_or_negative(num);
-    return 0;
+return;
 }
