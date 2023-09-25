@@ -7,21 +7,14 @@
  *
  * Return: number of elements in the list
  * more explanation
- * Initialize a counter variable.
- * While there are nodes in the list
- * Increment the counter
- * Move to the next node
- * Return the total coun
  */
 size_t list_len(const list_t *g)
 {
-    size_t n = 0;
-
-    while (g)
-    {
-        n++;
-        g = g->next;
-    }
-
-    return (n);
+	 size_t n = 0;
+	while (g)
+	{
+		n++;
+		g = g->next;
+	}
+	return (n);
 }
